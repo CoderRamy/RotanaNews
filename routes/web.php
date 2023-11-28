@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/news-details/{id?}', [HomeController::class, 'newsDetails'])->name('frontend.newsDetails');
+Route::get('/news-list/{slug?}', [HomeController::class, 'newsList'])->name('frontend.newsList');
